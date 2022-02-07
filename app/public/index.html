@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <title>Salat Tracker</title>
+
+    <script src="local.js"></script>
+  </head>
+
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="menu">
+      <ol>
+        <li class="menu-item" onclick="home()"><a href="#0">Home</a></li>
+        <li class="menu-item" onclick="weekly()"><a href="#0">Weekly</a></li>
+        <!-- <ol class="sub-menu">
+          <li class="menu-item"><a href="#0">table</a></li>
+          <li class="menu-item"><a href="#0">grapgh</a></li>
+        </ol> -->
+        <li class="menu-item" onclick="monthly()"><a href="#0">Monthly</a></li>
+        <li class="menu-item" onclick="locate()"><a href="#0">Location</a></li>
+      </ol>
+    </nav>
+
+    <!-- DAILY VIEW -->
+    <div id="dailyView">
+      <div id="date">
+        <h3 id="day"></h3>
+        <h1 id="numericDate"></h1>
+        <h3 id="monthYear"></h3>
+      </div>
+
+      <section class="prayerBoxes">
+        <div class="fajrBox">
+          <label class="column" for="">fajr</label>
+          <p class="column prayerStorage" id="fajrTime"></p>
+          <input class="column fajr" type="checkbox" name="" /> <br />
+        </div>
+
+        <div class="dhuhrBox">
+          <label class="column" for="">dhuhr</label>
+          <p class="column prayerStorage" id="dhuhrTime"></p>
+          <input class="column dhuhr" type="checkbox" name="" /><br />
+        </div>
+
+        <div class="asrBox">
+          <label class="column" for="">asr</label>
+          <p class="column prayerStorage" id="asrTime"></p>
+          <input class="column asr" type="checkbox" name="" /><br />
+        </div>
+
+        <div class="maghribBox">
+          <label class="column" for="">maghrib</label>
+          <p class="column prayerStorage" id="maghribTime"></p>
+          <input class="column maghrib" type="checkbox" /><br />
+        </div>
+
+        <div class="ishaBox">
+          <label class="column" for="">isha</label>
+          <p class="column prayerStorage" id="ishaTime"></p>
+          <input class="column isha" type="checkbox" name="" /><br />
+        </div>
+      </section>
+    </div>
+
+    <!-- WEEK VIEW -->
+    <div hidden id="weeklyView">
+      <table>
+        <tr>
+          <th></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th class="weekend">Saturday</th>
+          <th class="weekend">Sunday</th>
+        </tr>
+        <tr>
+          <th class="weekday0"></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr class="fajrBox">
+          <td>Fajr</td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+          <td><input class="fajr" type="checkbox" /><br /></td>
+        </tr>
+
+        <tr class="dhuhrBox">
+          <td>Dhuhr</td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+          <td><input class="dhuhr" type="checkbox" /><br /></td>
+        </tr>
+
+        <tr class="asrBox">
+          <td>Asr</td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+          <td><input class="asr" type="checkbox" /><br /></td>
+        </tr>
+
+        <tr class="maghribBox">
+          <td>Maghrib</td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+          <td><input class="maghrib" type="checkbox" /><br /></td>
+        </tr>
+
+        <tr class="ishaBox">
+          <td>Isha</td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+          <td><input class="isha" type="checkbox" /><br /></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- MONTH VIEW -->
+    <div hidden id="monthlyView">
+      <table class="calendar">
+        <tr>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+
+        <tr>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+        </tr>
+
+        <tr>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar">asdf</td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+        </tr>
+
+        <tr>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+        </tr>
+
+        <tr>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+          <td class="calendar"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- LOCATER -->
+    <div hidden id="location">
+      <div id="locBox">
+        <h2 hidden>CURRENT</h2>
+        <p hidden><span id="cityLabel"></span>, <span id="country"></span></p>
+        <label for="city" id="cityLabel">ENTER YOUR CITY</label>
+        <input type="text" id="city" />
+        <button id="submit" onclick="submitLocation()" disabled>Submit</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

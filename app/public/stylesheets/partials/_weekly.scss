@@ -1,0 +1,33 @@
+#weeklyView {
+  font-family: "Open Sans", sans-serif;
+  justify-content: center;
+  font-size: 1.8vw;
+  font-weight: 300;
+  margin: 2.5vw;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  height: 60vh;
+}
+
+th {
+  font-weight: normal;
+  text-shadow: #ce7d47 1px 0 10px;
+  height: 2vh;
+}
+
+.weekend {
+  text-shadow: #d11b1b 1px 0 10px;
+}
+
+td {
+  width: 20%;
+  border: 1px solid #ceb1b3;
+  justify-content: center;
+  text-align: center;
+  text-shadow: #000000 1px 0 10px;
+}
+
+//turn table into buttons. turn opactiy down when not clicked

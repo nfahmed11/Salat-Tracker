@@ -1,0 +1,54 @@
+section.prayerBoxes {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+section div {
+  display: flex;
+  align-items: center;
+  border-radius: 0.2rem;
+  font-size: 1.5vw;
+  font-weight: 300;
+  text-shadow: #000000 1px 0 10px;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
+  height: 8vh;
+}
+
+.prayerStorage {
+  text-shadow: none;
+}
+
+.column {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.fajrBox {
+  background: #fbf8cc;
+}
+
+.dhuhrBox {
+  background: #fde4cf;
+}
+
+.asrBox {
+  background: #ffcfd2;
+}
+
+.maghribBox {
+  background: #cfbaf0;
+}
+
+.ishaBox {
+  background: #a3c4f3;
+}
+
+@media (max-width: 45rem) {
+  section div {
+    font-size: 3vw;
+  }
+}

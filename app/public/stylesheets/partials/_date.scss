@@ -1,0 +1,65 @@
+#date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-shadow: #d1a11bcc 1px 0 10px;
+
+  justify-content: space-around;
+  position: relative;
+  top: 4vw;
+}
+
+// large screen
+@media (min-width: 45rem) {
+  #day {
+    font-size: 3vw;
+    margin: 2vh;
+    font-weight: 400;
+    padding-bottom: 2px;
+  }
+  #numericDate {
+    margin: 0.5vw;
+    font-size: 10vw;
+  }
+  #monthYear {
+    margin: 2vh;
+    font-weight: 400;
+    padding-bottom: 2px;
+    font-size: 3vw;
+  }
+}
+
+//small screen
+@media (max-width: 45rem) {
+  #day {
+    font-size: 4vw;
+    margin: 2.5vw;
+  }
+  #numericDate {
+    margin: 2vw;
+    // font-size: 6vw;
+    font-size: clamp(0.5rem, 0.5rem - 12.2222vw, 6rem);
+  }
+  #monthYear {
+    font-size: 4vw;
+    margin: 2.5vw;
+  }
+}
+
+#day {
+  font-size: 3vw;
+  margin: 2vh;
+  font-weight: 400;
+  padding-bottom: 2px;
+}
+#numericDate {
+  margin: 0.5vw;
+  font-size: 10vw;
+}
+#monthYear {
+  margin: 2vh;
+  font-weight: 400;
+  padding-bottom: 2px;
+  font-size: 3vw;
+}
